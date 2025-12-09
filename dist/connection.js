@@ -6,7 +6,7 @@ var ConnectionStatus;
 (function (ConnectionStatus) {
     ConnectionStatus["Connected"] = "connected";
     ConnectionStatus["Disconnected"] = "disconnected";
-})(ConnectionStatus = exports.ConnectionStatus || (exports.ConnectionStatus = {}));
+})(ConnectionStatus || (exports.ConnectionStatus = ConnectionStatus = {}));
 class Connection {
     constructor() {
         this.id = `conn_${Math.random().toString(36).substring(2, 9)}`;

@@ -2,13 +2,13 @@ import { NetworkService } from './network-service';
 
 const networkService = new NetworkService();
 
-console.log("\n--- Prueba 1: Envío Estándar ---");
+console.log("\nPrueba 1: Envío Estándar");
 networkService.sendStandardMessage("Hola Mundo (Texto plano)");
 
-console.log("\n--- Prueba 2: Envío Seguro ---");
+console.log("\nPrueba 2: Envío Seguro");
 networkService.sendSecureMessage("Datos Confidenciales (Encriptados)");
 
-console.log("\n--- Prueba 3: Gestión de Estado ---");
+console.log("\nPrueba 3: Gestión de Estado");
 
 import { ConnectionManager } from './connection-manager';
 const manager = ConnectionManager.getInstance();
