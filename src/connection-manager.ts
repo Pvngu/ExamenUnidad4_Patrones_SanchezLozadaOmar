@@ -1,4 +1,4 @@
-import { Connection } from './connection';
+import { IConnection } from './connection';
 import { ConnectionPool } from './connection-pool';
 
 export class ConnectionManager {
@@ -17,11 +17,11 @@ export class ConnectionManager {
         return ConnectionManager.instance;
     }
 
-    public getConnection(): Connection | null {
+    public getConnection(): IConnection | null {
         return this.pool.acquire();
     }
 
-    public releaseConnection(conn: Connection): void {
+    public releaseConnection(conn: IConnection): void {
         this.pool.release(conn);
     }
 }
