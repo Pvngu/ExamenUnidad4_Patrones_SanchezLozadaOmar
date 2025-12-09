@@ -7,11 +7,6 @@ export interface IConnection {
     sendData(data: string): void;
 }
 
-export enum ConnectionStatus {
-    Connected = 'connected',
-    Disconnected = 'disconnected',
-}
-
 export class Connection implements IConnection {
     public id: string;
     public state: IConnectionState;
