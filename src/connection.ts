@@ -1,32 +1,42 @@
+import { IConnectionState, DisconnectedState } from "./connection-state";
+
+export interface IConnection {
+    id: string;
+    connect(): void;
+    disconnect(): void;
+    sendData(data: string): void;
+}
+
 export enum ConnectionStatus {
     Connected = 'connected',
     Disconnected = 'disconnected',
 }
 
-export class Connection {
+export class Connection implements IConnection {
     public id: string;
-    public status: ConnectionStatus = ConnectionStatus.Disconnected;
+    public state: IConnectionState;
 
     constructor() {
         this.id = `conn_${Math.random().toString(36).substring(2, 9)}`;
+        this.state = new DisconnectedState();
         this.connect();
     }
 
+    public transitionTo(state: IConnectionState): void {
+        this.state = state;
+    }
+
     public connect(): void {
-        this.status = ConnectionStatus.Connected;
+        this.state.connect(this);
         console.log(`🔌 Conexión ${this.id} establecida.`);
     }
 
     public disconnect(): void {
-        this.status = ConnectionStatus.Disconnected;
+        this.state.disconnect(this);
         console.log(`🔌 Conexión ${this.id} cerrada.`);
     }
 
     public sendData(data: string): void {
-        if (this.status === ConnectionStatus.Connected) {
-            console.log(`📡 Enviando datos vía ${this.id}: "${data}"`);
-        } else {
-            console.error(`❌ No se pueden enviar datos. La conexión ${this.id} no está activa.`);
-        }
+        this.state.sendData(this, data);
     }
 }
