@@ -1,5 +1,5 @@
-import { IConnection } from './connection';
-import { ConnectionFactory, StandardConnectionFactory } from './connection-factory';
+import { IConnection } from '../connection';
+import { ConnectionFactory, StandardConnectionFactory } from '../patterns/factory/connection-factory';
 
 export class ConnectionPool {
     private available: IConnection[] = [];

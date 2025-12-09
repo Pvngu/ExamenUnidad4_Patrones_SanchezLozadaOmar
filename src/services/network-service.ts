@@ -1,5 +1,5 @@
-import { ConnectionManager } from './connection-manager';
-import { SecureConnection } from './connection-decorator';
+import { ConnectionManager } from '../infrastructure/manager/connection-manager';
+import { SecureConnection } from '../infrastructure/patterns/decorator/connection-decorator';
 
 export class NetworkService {
     private manager: ConnectionManager;

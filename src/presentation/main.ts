@@ -1,4 +1,4 @@
-import { NetworkService } from './network-service';
+import { NetworkService } from '../services/network-service';
 
 const networkService = new NetworkService();
 
@@ -10,7 +10,7 @@ networkService.sendSecureMessage("Datos Confidenciales (Encriptados)");
 
 console.log("\nPrueba 3: Gestión de Estado");
 
-import { ConnectionManager } from './connection-manager';
+import { ConnectionManager } from '../infrastructure/manager/connection-manager';
 const manager = ConnectionManager.getInstance();
 const conn = manager.getConnection();
 

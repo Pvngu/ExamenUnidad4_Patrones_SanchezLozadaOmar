@@ -1,4 +1,4 @@
-import { Connection } from './connection';
+import { Connection } from '../../connection';
 
 export interface IConnectionState {
     connect(context: Connection): void;

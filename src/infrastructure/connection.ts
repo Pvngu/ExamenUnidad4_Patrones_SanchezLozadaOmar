@@ -1,4 +1,4 @@
-import { IConnectionState, DisconnectedState } from "./connection-state";
+import { IConnectionState, DisconnectedState } from "./patterns/state/connection-state";
 
 export interface IConnection {
     id: string;

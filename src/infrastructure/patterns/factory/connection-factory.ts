@@ -1,4 +1,4 @@
-import { Connection, IConnection } from "./connection";
+import { Connection, IConnection } from "../../connection";
 
 export abstract class ConnectionFactory {
     public abstract createConnection(): IConnection;

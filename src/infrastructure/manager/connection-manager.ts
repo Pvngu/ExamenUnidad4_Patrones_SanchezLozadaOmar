@@ -1,4 +1,4 @@
-import { IConnection } from './connection';
+import { IConnection } from '../connection';
 import { ConnectionPool } from './connection-pool';
 
 export class ConnectionManager {

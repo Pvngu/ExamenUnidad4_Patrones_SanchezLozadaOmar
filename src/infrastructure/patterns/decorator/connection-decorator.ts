@@ -1,4 +1,4 @@
-import { IConnection } from "./connection";
+import { IConnection } from "../../connection";
 
 export abstract class ConnectionDecorator implements IConnection {
     protected wrapped: IConnection;
