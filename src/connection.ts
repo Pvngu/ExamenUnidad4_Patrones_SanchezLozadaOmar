@@ -28,12 +28,10 @@ export class Connection implements IConnection {
 
     public connect(): void {
         this.state.connect(this);
-        console.log(`🔌 Conexión ${this.id} establecida.`);
     }
 
     public disconnect(): void {
         this.state.disconnect(this);
-        console.log(`🔌 Conexión ${this.id} cerrada.`);
     }
 
     public sendData(data: string): void {
